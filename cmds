@@ -1,0 +1,4 @@
+sudo su -c "sudo echo 50000 > /sys/class/backlight/intel_backlight/brightness"
+sudo systemctl start wpa_supplicant
+surf duckduckgo.com >/dev/null 2>/dev/null &
+nix-build '<nixpkgs/nixos>' -A config.system.build.isoImage -I nixos-config=conf.nix
