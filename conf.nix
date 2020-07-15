@@ -9,12 +9,12 @@
   libinput.enable = true;
   desktopManager.xterm.enable = false;
   displayManager.auto = {
-        enable = true;
-        user = "nixos";
+   enable = true;
+   user = "nixos";
   };
   windowManager = {
-        dwm.enable = true;
-        default = "dwm";
+   dwm.enable = true;
+   default = "dwm";
   };
  };
  networking.wireless = {
@@ -31,5 +31,7 @@
   pkgs.qemu
   pkgs.pamixer
   pkgs.upower
+  pkgs.python3
  ];
+ services.upower.enable = true;
 }
