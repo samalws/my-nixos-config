@@ -4,24 +4,15 @@
   <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-base.nix>
   <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
  ];
+ networking.wireless.enable = true;
+ hardware.pulseaudio.enable = true;
+ services.upower.enable = true;
  services.xserver = {
   enable = true;
   libinput.enable = true;
   desktopManager.xterm.enable = false;
-  displayManager.auto = {
-   enable = true;
-   user = "nixos";
-  };
-  windowManager = {
-   dwm.enable = true;
-   default = "dwm";
-  };
+  displayManager.startx.enable = true;
  };
- networking.wireless = {
-  enable = true;
-  # networks. .psk = " ";
- };
- hardware.pulseaudio.enable = true;
  environment.systemPackages = [
   pkgs.ed
   pkgs.st
@@ -30,8 +21,7 @@
   pkgs.dmenu
   pkgs.qemu
   pkgs.pamixer
-  pkgs.upower
   pkgs.python3
+  pkgs.dwm
  ];
- services.upower.enable = true;
 }
