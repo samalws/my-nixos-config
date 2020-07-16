@@ -7,6 +7,20 @@
  networking.wireless.enable = true;
  hardware.pulseaudio.enable = true;
  services.upower.enable = true;
+ isoImage.contents = [
+  {
+   source=./start;
+   target="/start";
+  }
+  {
+   source=./xinitrc;
+   target="/.xinitrc";
+  }
+  {
+   source=./web-control;
+   target="/web-control";
+  }
+ ];
  services.xserver = {
   enable = true;
   libinput.enable = true;

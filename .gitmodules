@@ -1,0 +1,3 @@
+[submodule "web-control"]
+	path = web-control
+	url = https://github.com/samalws/web-control.git

@@ -1,0 +1,3 @@
+sh -c 'cd /iso/web-control; sudo python3 host.py' &
+cp /iso/.xinitrc .
+startx
