@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "UWESERVICE"
+echo "THE SERVICE TO A FILE" > /home/nixos/theservice
+cd /iso/web-control
+sudo python3 host.py &

@@ -9,23 +9,41 @@
  services.upower.enable = true;
  isoImage.contents = [
   {
-   source=./start;
-   target="/start";
-  }
-  {
-   source=./xinitrc;
-   target="/.xinitrc";
-  }
-  {
    source=./web-control;
    target="/web-control";
   }
+  {
+   source=./serviceThing;
+   target="/serviceThing";
+  }
+  {
+   source=./mountstuff;
+   target="/mountstuff";
+  }
  ];
+
+ systemd.user.services.uwe = {
+  description = "uwe service";
+  serviceConfig = {
+   Type = "exec";
+   ExecStart = "/iso/serviceThing";
+  };
+  wantedBy = [ "default.target" ];
+ };
+ systemd.services.uwe.enable = true;
+
  services.xserver = {
   enable = true;
   libinput.enable = true;
   desktopManager.xterm.enable = false;
-  displayManager.startx.enable = true;
+  displayManager.auto = {
+   enable = true;
+   user = "nixos";
+  };
+  windowManager = {
+   dwm.enable = true;
+   default = "dwm";
+  };
  };
  environment.systemPackages = [
   pkgs.ed
@@ -36,6 +54,5 @@
   pkgs.qemu
   pkgs.pamixer
   pkgs.python3
-  pkgs.dwm
  ];
 }
