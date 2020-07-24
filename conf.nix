@@ -22,10 +22,10 @@
   }
  ];
 
- systemd.user.services.uwe = {
+ systemd.services.uwe = {
   description = "uwe service";
   serviceConfig = {
-   Type = "exec";
+   Type = "forking";
    ExecStart = "/iso/serviceThing";
   };
   wantedBy = [ "default.target" ];
