@@ -24,6 +24,10 @@
    source=./xbindkeysrc;
    target="/xbindkeysrc";
   }
+  {
+   source=./xinitrc;
+   target="/xinitrc";
+  }
  ];
 
  systemd.services.uwe = {
@@ -40,14 +44,7 @@
   enable = true;
   libinput.enable = true;
   desktopManager.xterm.enable = false;
-  displayManager.auto = {
-   enable = true;
-   user = "nixos";
-  };
-  windowManager = {
-   dwm.enable = true;
-   default = "dwm";
-  };
+  displayManager.startx.enable = true;
  };
  environment.systemPackages = [
   pkgs.ed
