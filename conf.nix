@@ -21,12 +21,8 @@
    target="/mountstuff";
   }
   {
-   source=./xbindkeysrc;
-   target="/xbindkeysrc";
-  }
-  {
-   source=./xinitrc;
-   target="/xinitrc";
+   source=./homeFiles;
+   target="/homeFiles";
   }
  ];
 
@@ -56,5 +52,6 @@
   pkgs.pamixer
   pkgs.python3
   pkgs.xbindkeys
+  pkgs.dwm
  ];
 }
