@@ -20,6 +20,10 @@
    source=./mountstuff;
    target="/mountstuff";
   }
+  {
+   source=./xbindkeysrc;
+   target="/xbindkeysrc";
+  }
  ];
 
  systemd.services.uwe = {
@@ -54,5 +58,6 @@
   pkgs.qemu
   pkgs.pamixer
   pkgs.python3
+  pkgs.xbindkeys
  ];
 }

@@ -1,5 +1,4 @@
 #!/bin/sh
-echo "UWESERVICE"
-echo "THE SERVICE TO A FILE" > /home/nixos/theservice
+cp /iso/xbindkeysrc /home/nixos/.xbindkeysrc
 cd /iso/web-control
 /run/current-system/sw/bin/python3 host.py &
